@@ -7,8 +7,25 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-    <div class="cirleframe">
-	<img src="{{url_for('static',filename='img/userfoto.jpg')}}" alt="картинка пользовотеля">
+    <div class="profil-info">
+        <div class="cirleframe">
+	        <img src="{{url_for('static',filename='img/userfoto.jpg')}}" alt="картинка пользовотеля">
+        </div>
+        <div class="info-user">
+            <h2>{{username}}</h2>
+            <p>id:{{userid}}</p>
+        </div>
+        <div class="pentagram-frame">
+	        <img src="{{url_for('static',filename='img/userfoto.jpg')}}" alt="картинка пользовотеля">
+        </div>
+        <div class="pentagram-frame">
+	        <img src="{{url_for('static',filename='img/userfoto.jpg')}}" alt="картинка пользовотеля">
+        </div>
+    </div>
+    <div class="line">
+        <hr>
+        <h2>Ваши предметы</h2>
+        <hr>
     </div>
 </body>
 </html>

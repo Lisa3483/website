@@ -11,8 +11,10 @@ app = Flask(__name__)
 
 @app.route('/profil')
 def profil():
-    user_foto = "user_foto.jpg"
-    return render_template('profil.html', user_foto=user_foto)
+    param={}
+    param['username'] = 'hferrvreverv'
+    param['userid'] = '132334234'
+    return render_template('profil.html', **param)
 
 
 if __name__ == '__main__':
