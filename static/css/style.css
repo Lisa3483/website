@@ -14,11 +14,13 @@
 body{
     background-image:url('image/f.jpg');
     background-size:cover;
+
 }
 .profil-info{
     display:flex;
     align-items:center;
     margin-left:7.5%;
+    margin-top:25px;
 }
 .info-user{
     margin-left:20px;
@@ -60,4 +62,16 @@ body{
     height: 100%;
     width: 100%;
     object-fit: cover;
+}
+.nav-item a{
+    margin:0;
+    font-size:32px;
+    color:#3f888f;
+}
+.nav-item dropdown{
+    margin-right:20%;
+}
+footer{
+     background-size:cover;
+     background-color:white;
 }

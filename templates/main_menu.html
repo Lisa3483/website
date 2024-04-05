@@ -2,15 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Профиль</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet"
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
           crossorigin="anonymous">
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="static/css/assets.css" media="all">
+    <title>fdfdff</title>
 </head>
-<header>
+<body>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
@@ -41,7 +42,7 @@
     <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
     <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <img src="{{url_for('static',filename='img/pprofil.png')}}">
+          <img src="pprofil.png">
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" href="#">Регистрация</a>
@@ -54,30 +55,20 @@
 
   </div>
 </nav>
+<header>
+<div class="container">
+    <div class="row">
+        <div class="col-12"></div>
+        <h1 class="text">cnkdbnckdncjkn</h1>
+        <div class="itd_play">
+            <div class="itd_triangle"></div>
+
+        </div>
+        <a href="footer" class="btn btn-itd btn-lg text-uppercase">Кейсы</a>
+    </div>
+</div>
 </header>
 
-<body>
-    <div class="profil-info">
-        <div class="cirleframe">
-	        <img src="{{url_for('static',filename='img/userfoto.jpg')}}" alt="картинка пользовотеля">
-        </div>
-        <div class="info-user">
-            <h2>{{username}}</h2>
-            <p>id:{{userid}}</p>
-        </div>
-        <div class="pentagram-frame">
-	        <img src="{{url_for('static',filename='img/userfoto.jpg')}}" alt="картинка пользовотеля">
-        </div>
-        <div class="pentagram-frame">
-	        <img src="{{url_for('static',filename='img/userfoto.jpg')}}" alt="картинка пользовотеля">
-        </div>
-    </div>
-    <div class="line">
-        <hr>
-        <h2>Ваши предметы</h2>
-        <hr>
-    </div>
-</body>
 <div class="container">
   <footer class="py-3 my-4">
     <ul class="nav justify-content-center border-bottom pb-3 mb-3">
@@ -90,4 +81,8 @@
     <p class="text-center text-muted">&copy; 2022 Company, Inc</p>
   </footer>
 </div>
+
+
+
+</body>
 </html>
