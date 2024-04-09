@@ -5,51 +5,50 @@ import os
 app = flask.Flask(__name__)
 
 
-@app.route("/")
-def index():
-    return "Привет от приложения Flask"
-
-
-@app.route('/in')
+@app.route('/')
 def index_1():
-    return """header, footer {padding: 100px 0}
-header {
-background: linear-gradient(to right, #c9de96 0%,#8ab66b 44%,#398235 100%);}
-header { background: linear-gradient(to right, #fcf885 0%,#a5c956 58%,#a5c956 100%); }
-header { background: linear-gradient(to right, #fcf885 0%,#a5c956 46%,#5d8e12 100%);}
-h1 {text-align: center}
-a.itd_play  {
-  display: flex;
-  width: 150px;
-  height: 50px;
-  color: white;
-  font-weight: 700;
-  text-decoration: none;
-  user-select: none;
-  padding: .5em 2em;
-  outline: none;
-  border: 2px solid;
-  border-radius: 1px;
-  transition: 0.2s;
-  justify-content: center;
-  align-items: center;
-  margin: 30px auto 30px;
-}
-.rere {
-background-color: #398235;
-width: 60px;
-height: 60px;
-border-radius: 50%;
-display: flex;
-justify-content: center;
-align-items: center;
-margin: 30px auto;
-transition: 0.2s;
-}
-a.itd_play:hover {background: rgba(255,255,255,.2);}
-a.itd_play:active {background: white;}
-.rere:hover{background: rgba(255,255,255,.2);}"""
-
+    return """<iframe width="1140" height="641" src="https://www.youtube.com/embed/evQD6oZe8oQ" title="Бобр.mp4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>"""
+@app.route('/index')
+def index_2():
+    return '''<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Проигрывание видео</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
+        .video-container {
+            max-width: 800px;
+            max-height: 600px;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+        video {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="video-container">
+        <video controls>
+            <source src="sample-5s.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+</body>
+</html>
+'''
 
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))
