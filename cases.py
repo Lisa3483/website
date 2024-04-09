@@ -8,8 +8,14 @@ app = flask.Flask(__name__)
 @app.route('/')
 def index_1():
     return """<iframe width="1140" height="641" src="https://www.youtube.com/embed/evQD6oZe8oQ" title="Бобр.mp4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>"""
+
+
 @app.route('/index')
 def index_2():
+    conn = sqlite3.connect('cases_info.db')
+    cursor = conn.cursor()
+    if case_name in cases_name:
+        pass
     return '''<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -49,6 +55,8 @@ def index_2():
 </body>
 </html>
 '''
+
+
 
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))
