@@ -1,7 +1,8 @@
-import flask
-import sqlite3
-import json
 import os
+import sqlite3
+
+import flask
+
 app = flask.Flask(__name__)
 
 
@@ -14,7 +15,8 @@ def index_1():
 def index_2():
     conn = sqlite3.connect('cases_info.db')
     cursor = conn.cursor()
-    if case_name in cases_name:
+    cases_names = []
+    for case_name in cases_names:
         pass
     return '''<!DOCTYPE html>
 <html lang="en">
@@ -55,7 +57,6 @@ def index_2():
 </body>
 </html>
 '''
-
 
 
 if __name__ == '__main__':
