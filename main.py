@@ -18,7 +18,7 @@ db = UserDatabase()
 def index(flagpass=0):
     param = {}
     param['flagpass'] = flagpass
-    return render_template('regestr.html', **param)
+    return render_template('log_in.html', **param)
 
 
 def generate_code():

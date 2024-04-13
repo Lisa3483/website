@@ -14,7 +14,7 @@ def profil():
     param={}
     param['username'] = 'hferrvreverv'
     param['userid'] = '132334234'
-    return render_template('wallet.html', **param)
+    return render_template('wallet1.html', **param)
 
 
 if __name__ == '__main__':

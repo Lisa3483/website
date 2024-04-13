@@ -14,6 +14,8 @@
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -32,28 +34,25 @@
         <a class="nav-link" href="#">Профиль</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Кошелек</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Контакты</a>
+        <a class="nav-link" href="#">Баланс пользователя</a>
       </li>
     </ul>
     <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
-    <li class="nav-item dropdown">
+    <li class="nav-item dropdown dropleft">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <img src="{{url_for('static',filename='img/pprofil.png')}}">
+          <img src="static/img/pprofil.png">
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" href="#">Регистрация</a>
-          <a class="dropdown-item" href="#">Авторизация</a>
+           <form action="/login" method="post">
+          <button type="submit" class="dropdown-item" onclick="log_in()">Авторизация</button>
+           </form>
         </div>
       </li>
     </ul>
-
-
-
-  </div>
+ </div>
 </nav>
+
 </header>
 
 <body>
@@ -84,10 +83,10 @@
       <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Главная страница</a></li>
       <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Кейсы</a></li>
       <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Профиль</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Кошелек</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Контакты</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Баланс пользователя</a></li>
     </ul>
     <p class="text-center text-muted">&copy; 2022 Company, Inc</p>
   </footer>
 </div>
+
 </html>

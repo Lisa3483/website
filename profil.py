@@ -11,10 +11,16 @@ app = Flask(__name__)
 
 @app.route('/profil')
 def profil():
-    param={}
+    param = {}
     param['username'] = 'hferrvreverv'
     param['userid'] = '132334234'
     return render_template('profil.html', **param)
+
+
+@app.route('/log_in', methods=['POST'])
+def log_in():
+    param = {}
+    return render_template('log_in.html', **param)
 
 
 if __name__ == '__main__':
