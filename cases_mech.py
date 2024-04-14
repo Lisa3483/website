@@ -1,12 +1,19 @@
+import json
 import random
 import sqlite3
 
+import requests
 
-class cases_mechanic:
+
+class Cases_mechanic:
     def __init__(self):
         pass
 
+    def get_reqests(self):
+        pass
+
     def get_win(self, table_name):
+        requests.get()
         id_of_img = 1
         conn = sqlite3.connect('cases_info.db')
         cursor = conn.cursor()
@@ -25,6 +32,11 @@ class cases_mechanic:
                 break
         cursor.execute(f'''SELECT img_name, cost FROM {table_name} WHERE id = {str(id_of_img)}''')
         img_name, cost = cursor.fetchall()
+        conn.commit()
+        conn.close()
+        json.dump(img_name, cost)
 
     def sell(self):
-        pass
+        conn = sqlite3.connect('cases_info.db')
+        cursor = conn.cursor()
+
