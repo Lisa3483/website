@@ -34,7 +34,7 @@
         <a class="nav-link" href="#">Профиль</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Баланс пользователя</a>
+        <a class="nav-link" href="/wallet">Баланс пользователя</a>
       </li>
     </ul>
     <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
@@ -43,10 +43,9 @@
           <img src="static/img/pprofil.png">
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">Регистрация</a>
-           <form action="/login" method="post">
-          <button type="submit" class="dropdown-item" onclick="log_in()">Авторизация</button>
-           </form>
+          <a class="dropdown-item" href="/registr">Регистрация</a>
+            <a class="dropdown-item" href="/log_in">Авторизация</a>
+
         </div>
       </li>
     </ul>
@@ -56,6 +55,7 @@
 </header>
 
 <body>
+    <div class="wallpaper" >
     <div class="profil-info">
         <div class="cirleframe">
 	        <img src="{{url_for('static',filename='img/userfoto.jpg')}}" alt="картинка пользовотеля">
@@ -75,6 +75,7 @@
         <hr>
         <h2>Ваши предметы</h2>
         <hr>
+    </div>
     </div>
 </body>
 <div class="container">

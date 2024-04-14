@@ -12,6 +12,16 @@
 <div class="container mt-5">
     <h1>Регистрация</h1>
     <form action="/register" method="post">
+        {% if flagpass == 2 %}
+        <div class="mb-3">
+            <label for="username" class="form-label">Имя пользователя <span style="color: red; font-weight: bold;">* Имя пользователя или почта заняты</span></label>
+            <input type="text" class="form-control" id="username" name="username" required>
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email <span style="color: red; font-weight: bold;">* Имя пользователя или почта заняты</span></label>
+            <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+        {% else %}
         <div class="mb-3">
             <label for="username" class="form-label">Имя пользователя</label>
             <input type="text" class="form-control" id="username" name="username" required>
@@ -20,20 +30,8 @@
             <label for="email" class="form-label">Email</label>
             <input type="email" class="form-control" id="email" name="email" required>
         </div>
-        <div class="mb-3">
-            <label for="verification_code" class="form-label">Код подтверждения</label>
-            <input type="text" class="form-control" id="verification_code" name="verification_code" required>
-        </div>
-        {% if flagpass == 0 %}
-        <div class="mb-3">
-            <label for="password" class="form-label">Пароль</label>
-            <input type="password" class="form-control" id="password" name="password" required>
-        </div>
-        <div class="mb-3">
-            <label for="confirm_password" class="form-label">Повторите пароль</label>
-            <input type="password" class="form-control" id="confirm_password" name="confirm_password" required>
-        </div>
-        {% else %}
+        {%endif%}
+        {% if flagpass == 1 %}
         <div class="mb-3">
             <label for="password" class="form-label">Пароль  <span style="color: red; font-weight: bold;">* Пароли должны совпадать</span></label>
             <input type="password" class="form-control" id="password" name="password" required>
@@ -41,6 +39,15 @@
         <div class="mb-3">
             <label for="confirm_password" class="form-label">Повторите пароль  <span style="color: red; font-weight: bold;">* Пароли должны совпадать</span></label>
 
+            <input type="password" class="form-control" id="confirm_password" name="confirm_password" required>
+        </div>
+        {% else %}
+        <div class="mb-3">
+            <label for="password" class="form-label">Пароль</label>
+            <input type="password" class="form-control" id="password" name="password" required>
+        </div>
+        <div class="mb-3">
+            <label for="confirm_password" class="form-label">Повторите пароль</label>
             <input type="password" class="form-control" id="confirm_password" name="confirm_password" required>
         </div>
         {%endif%}

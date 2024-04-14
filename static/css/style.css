@@ -11,7 +11,7 @@
     width: 100%;
     object-fit: cover;
 }
-body{
+.wallpaper{
     background-size:cover;
     background: linear-gradient(to right, #fcf885 0%,#a5c956 46%,#5d8e12 100%);
 
