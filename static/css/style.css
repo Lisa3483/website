@@ -1,0 +1,118 @@
+.cirleframe{
+    height: 250px;
+    width: 250px;
+    border-radius:50%;
+    overflow:hidden;
+    border:5px solid #7fb5b5;
+
+}
+.cirleframe img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+body{
+    background-size:cover;
+    background: linear-gradient(to right, #fcf885 0%,#a5c956 46%,#5d8e12 100%);
+
+}
+.profil-info{
+    display:flex;
+    align-items:center;
+    margin-left:7.5%;
+    margin-top:25px;
+}
+.info-user{
+    margin-left:20px;
+
+}
+.info-user h2{
+    margin:0;
+    font-size:64px;
+    color:#3f888f;
+}
+.info-user p{
+    margin:5px 0;
+    font-size:48px;
+
+}
+.line{
+    margin-top: 50px;
+}
+.line hr{
+    border: none;
+    border-top: 6px solid #3f888f;
+    width:85%
+}
+.line h2{
+   margin-left:40.7%;
+   margin-right:40.5%;
+   white-space: nowrap;
+}
+.pentagram-frame {
+    border: 2px solid #333;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 0, 0, 0.2);
+    height: 200px;
+    width: 200px;
+    overflow:hidden;
+    margin-left:10%;
+}
+.pentagram-frame img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.nav-item a{
+    margin:0;
+    font-size:32px;
+    color:#3f888f;
+}
+.nav-item dropdown{
+    margin-right:20%;
+}
+footer{
+     background-size:cover;
+     background-color:white;
+}
+header, footer {padding: 100px 0}
+body {
+   background: linear-gradient(to right, #c9de96 0%,#8ab66b 44%,#398235 100%);
+}
+body { background: linear-gradient(to right, #fcf885 0%,#a5c956 58%,#a5c956 100%); }
+body { background: linear-gradient(to right, #fcf885 0%,#a5c956 46%,#5d8e12 100%);}
+h1 {text-align: center}
+a.itd_play  {
+  display: flex;
+  width: 150px;
+  height: 50px;
+  color: white;
+  font-weight: 700;
+  text-decoration: none;
+  user-select: none;
+  padding: .5em 2em;
+  outline: none;
+  border: 2px solid;
+  border-radius: 1px;
+  transition: 0.2s;
+  justify-content: center;
+  align-items: center;
+  margin: 30px auto 30px;
+}
+.rere {
+background-color: #398235;
+width: 60px;
+height: 60px;
+border-radius: 50%;
+display: flex;
+justify-content: center;
+align-items: center;
+margin: 30px auto;
+transition: 0.2s;
+}
+a.itd_play:hover {background: rgba(255,255,255,.2);}
+a.itd_play:active {background: white;}
+.rere:hover{background: rgba(255,255,255,.2);}
+button{
+    background-color: #b2ec5d;
+}
