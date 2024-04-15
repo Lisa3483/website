@@ -4,16 +4,16 @@
     border-radius:50%;
     overflow:hidden;
     border:5px solid #7fb5b5;
-
 }
+
 .cirleframe img{
     height: 100%;
     width: 100%;
     object-fit: cover;
 }
-body{
+.wallpaper {
     background-size:cover;
-    background: linear-gradient(to right, #fcf885 0%,#a5c956 46%,#5d8e12 100%);
+    background: linear-gradient(to right, #c78bb5 0%, #d6b4c2 63%, #baa0ab 100%);
 
 }
 .profil-info{
@@ -41,7 +41,7 @@ body{
 }
 .line hr{
     border: none;
-    border-top: 6px solid #3f888f;
+    border-top: 6px solid #f0ebf0;
     width:85%
 }
 .line h2{
@@ -76,11 +76,8 @@ footer{
      background-color:white;
 }
 header, footer {padding: 100px 0}
-body {
-   background: linear-gradient(to right, #c9de96 0%,#8ab66b 44%,#398235 100%);
-}
-body { background: linear-gradient(to right, #fcf885 0%,#a5c956 58%,#a5c956 100%); }
-body { background: linear-gradient(to right, #fcf885 0%,#a5c956 46%,#5d8e12 100%);}
+
+
 h1 {text-align: center}
 a.itd_play  {
   display: flex;
