@@ -1,14 +1,14 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
-from DB.databaseClass import User
+from databaseClass import User
 
 Base = declarative_base()
 
 
 class UserDatabase:
     def __init__(self):
-        self.engine = create_engine('postgresql://postgres:123@localhost/postgres')
+        self.engine = create_engine('postgresql://postgres:123@192.168.0.110:5432/postgres')
         Base.metadata.create_all(self.engine)
         Session = sessionmaker(bind=self.engine)
         self.session = Session()
@@ -27,7 +27,7 @@ class UserDatabase:
         user = self.session.query(User).filter(User.email == email, User.hashed_password == password).first()
         if user:
 
-            return user.nickname,user.id
+            return user.nickname, user.id
         else:
             return False
 
@@ -38,3 +38,9 @@ class UserDatabase:
             return True
         else:
             return False
+
+
+db = UserDatabase()
+db.add_user(nickname="b", hashed_password="123", email="b@gmail.com")
+print("Успешно")
+db.close_connection()
