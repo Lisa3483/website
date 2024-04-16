@@ -15,7 +15,7 @@ class Cases_mechanic:
     def get_win(self, table_name):
         requests.get()
         id_of_img = 1
-        conn = sqlite3.connect('cases_info.db')
+        conn = sqlite3.connect('../files/files_db/cases_info.db')
         cursor = conn.cursor()
         cursor.execute(f'''SELECT chance FROM {table_name}''')
         chances = cursor.fetchall()
@@ -37,6 +37,6 @@ class Cases_mechanic:
         json.dump(img_name, cost)
 
     def sell(self):
-        conn = sqlite3.connect('cases_info.db')
+        conn = sqlite3.connect('../files/files_db/cases_info.db')
         cursor = conn.cursor()
 
