@@ -1,10 +1,8 @@
 from sqlalchemy import Column, Integer, String, DateTime, ForeignKey, Enum, Numeric, JSON
 from sqlalchemy.orm import relationship, declarative_base
 from sqlalchemy.sql import func
-from sqlalchemy import create_engine, MetaData
 
 Base = declarative_base()
-
 
 class User(Base):
     __tablename__ = 'users'
@@ -14,5 +12,3 @@ class User(Base):
     nickname = Column(String(10), nullable=False)
     hashed_password = Column(String, nullable=True)
     email = Column(String, index=True, unique=True, nullable=True)
-
-
