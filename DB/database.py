@@ -1,23 +1,36 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
-from .databaseClass import User
-import psycopg2
+import os
+from sqlalchemy import Column, Integer, String, DateTime, ForeignKey, Enum, Numeric, JSON
+from sqlalchemy.orm import relationship, declarative_base
+from sqlalchemy.sql import func
 Base = declarative_base()
+
+
+class User(Base):
+    __tablename__ = 'users'
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    datetime = Column(DateTime, default=func.now())
+    balance = Column(Numeric(precision=10, scale=2), default=0.0)
+    nickname = Column(String(10), nullable=False)
+    hashed_password = Column(String, nullable=True)
+    email = Column(String, index=True, unique=True, nullable=True)
 
 
 class UserDatabase:
     def __init__(self):
-        self.engine = create_engine('postgresql://postgres:123@localhost/postgres')
+        # Путь к файлу базы данных SQLite3
+        db_path = os.path.join(os.path.dirname(__file__), 'mydatabase.db')
+        self.engine = create_engine('sqlite:///' + db_path, connect_args={'check_same_thread': False})
+        # Создаем таблицы, если они еще не существуют
         Base.metadata.create_all(self.engine)
         Session = sessionmaker(bind=self.engine)
         self.session = Session()
 
     def add_user(self, nickname, hashed_password, email):
         new_user = User(nickname=nickname, hashed_password=hashed_password, email=email)
-
         self.session.add(new_user)
-
         self.session.commit()
 
     def close_connection(self):
@@ -26,15 +39,13 @@ class UserDatabase:
     def check_log_in(self, email, password):
         user = self.session.query(User).filter(User.email == email, User.hashed_password == password).first()
         if user:
-
-            return user.nickname,user.id
+            return user.nickname, user.id
         else:
             return False
 
     def check_regis(self, email, nickname):
         user = self.session.query(User).filter((User.email == email) | (User.nickname == nickname)).first()
         if user:
-
             return True
         else:
             return False
