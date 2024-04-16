@@ -10,7 +10,7 @@ from DB.database import UserDatabase
 
 app = Flask(__name__, template_folder='static/templates')
 
-db = UserDatabase()
+# db = UserDatabase()
 NAME = ''
 ID = ''
 FLAG_IN = 0
@@ -42,36 +42,36 @@ def regist(flagpass=0):
     return render_template('regestr.html', **param)
 
 
-@app.route('/register', methods=['POST'])
-def register():
-    username = request.form['username']
-    email = request.form['email']
-    password = request.form['password']
-    confirm_password = request.form['confirm_password']
-
-    if password != confirm_password:
-        return regist(flagpass=1)
-
-    if db.check_regis(email, username):
-        return regist(flagpass=2)
-    else:
-        db.add_user(nickname=username, hashed_password=password, email=email)
-        return 'Пользователь успешно зарегестрирован'
-
-
-@app.route('/log', methods=['POST'])
-def log():
-    global NAME
-    global ID
-    global FLAG_IN
-    email = request.form['email']
-    password = request.form['password']
-    if db.check_log_in(email, password):
-        name, id_ = db.check_log_in(email, password)
-        NAME = name
-        ID = id_
-        FLAG_IN = 1
-        return profil()
+# @app.route('/register', methods=['POST'])
+# def register():
+#     username = request.form['username']
+#     email = request.form['email']
+#     password = request.form['password']
+#     confirm_password = request.form['confirm_password']
+#
+#     if password != confirm_password:
+#         return regist(flagpass=1)
+#
+#     if db.check_regis(email, username):
+#         return regist(flagpass=2)
+#     else:
+#         db.add_user(nickname=username, hashed_password=password, email=email)
+#         return 'Пользователь успешно зарегестрирован'
+#
+#
+# @app.route('/log', methods=['POST'])
+# def log():
+#     global NAME
+#     global ID
+#     global FLAG_IN
+#     email = request.form['email']
+#     password = request.form['password']
+#     if db.check_log_in(email, password):
+#         name, id_ = db.check_log_in(email, password)
+#         NAME = name
+#         ID = id_
+#         FLAG_IN = 1
+#         return profil()
 
 @app.route('/wallet', methods=['GET'])
 def wallet():
