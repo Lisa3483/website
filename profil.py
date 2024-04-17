@@ -18,7 +18,12 @@ FLAG_IN = 0
 
 @app.route('/')
 def index():
-    return render_template('main_menu.html')
+    global FLAG_IN
+    param = {}
+    param['flagau'] = FLAG_IN
+    print(FLAG_IN, NAME, ID)
+
+    return render_template('main_menu.html', **param)
 
 
 @app.route('/profil')
@@ -59,7 +64,7 @@ def register():
         return 'Пользователь успешно зарегестрирован'
 
 
-@app.route('/log', methods=['POST'])
+'''@app.route('/log', methods=['POST'])
 def logs():
     global NAME
     global ID
@@ -68,7 +73,7 @@ def logs():
     password = request.form['password']
     if db.check_log_in(email, password):
         name, id_ = db.check_log_in(email, password)
-        NAME = name@app.route('/register', methods=['POST'])
+        NAME = name@app.route('/register', methods=['POST'])'''
 def register():
     username = request.form['username']
     email = request.form['email']
@@ -97,9 +102,7 @@ def log():
         NAME = name
         ID = id_
         FLAG_IN = 1
-        return profil()
-        ID = id_
-        FLAG_IN = 1
+        print(FLAG_IN)
         return profil()
 
 @app.route('/wallet', methods=['GET'])
