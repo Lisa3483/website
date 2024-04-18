@@ -34,6 +34,21 @@ def log_in():
     param = {}
     return render_template('log_in.html', **param)
 
+@app.route('/case1')
+def case1():
+    # Ваша логика для кейса 1
+    return render_template('case_1.html')
+
+@app.route('/case2')
+def case2():
+    # Ваша логика для кейса 2
+    return render_template('case_2.html')
+
+
+@app.route('/case3')
+def case3():
+    # Ваша логика для кейса 3
+    return render_template('case_3.html')
 
 @app.route('/registr', methods=['GET'])
 def regist(flagpass=0):
@@ -56,7 +71,7 @@ def register():
         return regist(flagpass=2)
     else:
         db.add_user(nickname=username, hashed_password=password, email=email)
-        return 'Пользователь успешно зарегестрирован'
+        return render_template('main_menu.html')
 
 
 @app.route('/log', methods=['POST'])
