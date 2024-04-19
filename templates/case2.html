@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кейс 3</title>
+    <style>
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        .return-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+        .open-case-button {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 8px;
+        }
+        .case-image {
+            display: block;
+            margin: 0 auto;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button class="return-button" onclick="window.location.href='/';">Вернуться на главную</button>
+        <img class="case-image" src="path/to/your/case/image.jpg" alt="Изображение кейса">
+        <button class="open-case-button" onclick="animateCase();">Открыть кейс</button>
+    </div>
+
+    <script>
+        function animateCase() {
+            var images = [
+                "path/to/your/animation/image1.jpg",
+                "path/to/your/animation/image2.jpg",
+                "path/to/your/animation/image3.jpg",
+                "path/to/your/animation/image4.jpg"
+            ];
+
+            var index = 0;
+
+            var animationInterval = setInterval(function() {
+                document.querySelector('.case-image').src = images[index];
+                index++;
+                if (index === images.length) {
+                    clearInterval(animationInterval);
+                }
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
