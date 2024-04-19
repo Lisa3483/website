@@ -1,5 +1,5 @@
 import random
-
+from code.cases_mech import Cases_mechanic
 from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
 app = Flask(__name__)
@@ -21,8 +21,10 @@ def index():
 @app.route('/case1')
 def case1():
     number = random.randint(1, 5)
-    table_name = 'Table_hedgehogs'
+    table_name = 'Table_dogs'
     #user = SQLAlchemy.query(table_name).filter_by(id=number)
+    cass = Cases_mechanic()
+    cass.get_win('Table_dogs')
     return render_template('case1.html')
 
 
@@ -31,14 +33,18 @@ def case2():
     number = random.randint(1, 5)
     table_name = 'Table_hedgehogs'
     #user = SQLAlchemy.session.query(table_name).filter_by(id=number)
+    cass = Cases_mechanic()
+    cass.get_win('Table_hedgehogs')
     return render_template('case2.html')
 
 
 @app.route('/case3')
 def case3():
     number = random.randint(1, 5)
-    table_name = 'Table_hedgehogs'
+    table_name = 'Table_cats'
     #user = SQLAlchemy.session.query(table_name).filter_by(id=number)
+    cass = Cases_mechanic()
+    cass.get_win('Table_cats')
 
     return render_template('case3.html')
 
