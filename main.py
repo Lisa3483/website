@@ -1,4 +1,3 @@
-import flask
-from code.cases import index
+from cases import index
 index()
 
