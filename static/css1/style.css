@@ -1,8 +1,8 @@
 header, footer {padding:100px 100px;}
 
 header { background: linear-gradient(to right, #fcf885 0%,#a5c956 46%,#5d8e12 100%);}
-h6 {padding: 0 50px}
-h1 {text-align: center}
+h6 {padding: 0 100px;}
+h1 {text-align: center;}
 
 .wallpaper {
   display: flex;
@@ -15,7 +15,7 @@ h1 {text-align: center}
   background: linear-gradient(to right, #fcf885 0%,#a5c956 46%,#5d8e12 100%);
 }
 
-.itd_play  {
+a.itd_play  {
   display: flex;
   width: 150px;
   height: 50px;
@@ -39,8 +39,10 @@ border-width: 10px 0 10px 20px;
 border-color: transparent transparent transparent white;
 transform: rotate(90deg);}
 
-.about {background-color: white;}
-.about i {font-size: 25x; color:#B78EC9;}
+.about {background-color: white;
+padding: 50px 0;}
+
+.about i {font-size: 25px; color:#B78EC9;}
 .itd_circle {margin: 0 auto 15px;
 width: 70px;
 height: 70px;
@@ -61,8 +63,8 @@ align-items: center;
 margin: 30px auto;
 transition: 0.2s;
 }
-.itd_play:hover {background: rgba(255,255,255,.2);}
-.itd_play:active {background: white;}
+a.itd_play:hover {background: rgba(255,255,255,.2);}
+a.itd_play:active {background: white;}
 .rere:hover{background: rgba(255,255,255,.2);}
 .rere:active {background: white;}
 header {
@@ -84,3 +86,18 @@ header {
   background-size: var(--s) calc(2*var(--s)/3);
 }
 
+.nebody {
+        margin-left:20%;
+         margin-right:20%;
+}
+
+.button {
+            padding: 20px 35px; /* Увеличение размера кнопок */
+            margin: 10px;
+            font-size: 18px; /* Увеличение размера шрифта */
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+}

@@ -4,16 +4,17 @@
     border-radius:50%;
     overflow:hidden;
     border:5px solid #7fb5b5;
-}
 
+}
 .cirleframe img{
     height: 100%;
     width: 100%;
     object-fit: cover;
 }
-.wallpaper {
+.wallpaper{
     background-size:cover;
-    background: linear-gradient(to right, #c78bb5 0%, #d6b4c2 63%, #baa0ab 100%);
+    background: linear-gradient(to right, #fcf885 0%,#a5c956 46%,#5d8e12 100%);
+
 }
 .profil-info{
     display:flex;
@@ -40,7 +41,7 @@
 }
 .line hr{
     border: none;
-    border-top: 6px solid #f0ebf0;
+    border-top: 6px solid #3f888f;
     width:85%
 }
 .line h2{
@@ -75,8 +76,9 @@ footer{
      background-color:white;
 }
 header, footer {padding: 100px 0}
-
-
+body { background-size:cover;
+    background: linear-gradient(to right, #c78bb5 0%, #d6b4c2 63%, #baa0ab 100%);
+    }
 h1 {text-align: center}
 a.itd_play  {
   display: flex;
@@ -95,6 +97,7 @@ a.itd_play  {
   align-items: center;
   margin: 30px auto 30px;
 }
+
 .rere {
 background-color: #398235;
 width: 60px;

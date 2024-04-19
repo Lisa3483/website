@@ -24,6 +24,45 @@
     </style>
 </head>
 <body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="/cases">Кейсы</a>
+
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Главное меню <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/cases">Кейсы</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/profil">Профиль</a>
+      </li>
+      <li class="nav-item">
+          {%if flagau == 1%}
+        <a class="nav-link" href="/wallet">Баланс пользователя</a>
+          {%endif%}
+          {%if flagau == 0%}
+          <a id="openModalBtn" class="nav-link" >Баланс пользователя</a>
+          {%endif%}
+      </li>
+
+
+    </ul>
+    <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+    <li class="nav-item dropdown dropleft">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" aria-haspopup="true" aria-expanded="false">
+          <img src="static/img/pprofil.png">
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="/registr" id="registr">Регистрация</a>
+          <a class="dropdown-item" href="/log_in" id="log_in">Авторизация</a>
+        </div>
+    </li>
+</ul>
     <div class="content">
         <h1>Кейс 1</h1>
     </div>

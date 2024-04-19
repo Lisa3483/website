@@ -8,6 +8,7 @@
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
           crossorigin="anonymous">
     <link rel="stylesheet" href="static/css1/style.css">
+    <link rel="import" href="/header.html">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://kit.fontawesome.com/643d8d2967.js" crossorigin="anonymous"></script>
@@ -17,8 +18,9 @@
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<!--<iframe src="static/templates/header.html"></iframe>-->
 
+
+<!--#include file="static/templates/header.html" -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -94,8 +96,8 @@
         <div class="col-12">
         <h1 class="text-center text-white">Кейсы с домашними питомцами</h1>
 
-        <div class="itd_play">К кейсам
-        </div>
+        <a class="itd_play">К кейсам
+        </a>
         <div class="rere"><div class="itd_triangle"></div></div>
         </div>
     </div>
@@ -129,7 +131,7 @@
 </script>
 </header>
 
-<section class="about">
+<section class="about" id="cases" data-bs-spy="scroll" data-bs-smooth-scroll="true">
     <div class="container">
         <div class="row">
         <div class="col 12">
@@ -155,8 +157,34 @@
         </div>
     </div>
 </section>
-<h2 class="text-center text-uppercase mb-5" style="color:#AF7AC5">Доступные кейсы</h2>
 
+<section class="about">
+    <div class="container">
+        <div class="row">
+        <div class="col 12">
+            <h2 class="text-center text-uppercase mb-5" style="color:#AF7AC5">Доступные кейсы</h2>
+        </div>
+        </div>
+        <div class="row">
+        <div class="col-xl-4 col-md-6 col-sm-12">
+            <h4 class="text-center">Кейс с котами</h4>
+        </div>
+        <div class="col-xl-4 col-md-6 col-sm-12">
+            <h4 class="text-center">Кейс с собаками</h4>
+        </div>
+        <div class="col-xl-4 col-md-6 col-sm-12">
+            <h4 class="text-center">Кейс с ежами</h4>
+        </div>
+        </div>
+    </div>
+</section>
+<div class="nebody">
+    <form action="/button_clicked" method="post">
+        {% for i in range(num_buttons) %}
+            <button class="button" name="button_id" value="{{ i+1 }}">Кнопка {{ i+1 }}</button>
+        {% endfor %}
+    </form>
+</div>
 <div class="container">
   <footer class="text-center text-lg-start bg-body-tertiary text-muted">
 

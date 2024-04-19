@@ -7,7 +7,6 @@ import string
 from flask_mail import Mail, Message
 from DB.database import UserDatabase
 
-
 app = Flask(__name__, template_folder='static/templates')
 
 db = UserDatabase()
@@ -18,37 +17,30 @@ FLAG_IN = 0
 
 @app.route('/')
 def index():
-    return render_template('main_menu.html')
+    global FLAG_IN
+    param = {}
+    param['flagau'] = FLAG_IN
+    param['num_buttons'] = 10
+    print(FLAG_IN, NAME, ID)
+
+    return render_template('main_menu.html', **param)
 
 
 @app.route('/profil')
 def profil():
     param = {}
     param['username'] = NAME
+    param['flagau'] = FLAG_IN
     param['userid'] = ID
     return render_template('profil.html', **param)
 
 
 @app.route('/log_in', methods=['GET'])
 def log_in():
+    print(FLAG_IN)
     param = {}
     return render_template('log_in.html', **param)
 
-@app.route('/case1')
-def case1():
-    # Ваша логика для кейса 1
-    return render_template('case_1.html')
-
-@app.route('/case2')
-def case2():
-    # Ваша логика для кейса 2
-    return render_template('case_2.html')
-
-
-@app.route('/case3')
-def case3():
-    # Ваша логика для кейса 3
-    return render_template('case_3.html')
 
 @app.route('/registr', methods=['GET'])
 def regist(flagpass=0):
@@ -71,10 +63,10 @@ def register():
         return regist(flagpass=2)
     else:
         db.add_user(nickname=username, hashed_password=password, email=email)
-        return render_template('main_menu.html')
+        return 'Пользователь успешно зарегестрирован'
 
 
-@app.route('/log', methods=['POST'])
+'''@app.route('/log', methods=['POST'])
 def logs():
     global NAME
     global ID
@@ -83,7 +75,9 @@ def logs():
     password = request.form['password']
     if db.check_log_in(email, password):
         name, id_ = db.check_log_in(email, password)
-        NAME = name@app.route('/register', methods=['POST'])
+        NAME = name@app.route('/register', methods=['POST'])'''
+
+
 def register():
     username = request.form['username']
     email = request.form['email']
@@ -112,15 +106,22 @@ def log():
         NAME = name
         ID = id_
         FLAG_IN = 1
+        print(FLAG_IN)
         return profil()
-        ID = id_
-        FLAG_IN = 1
-        return profil()
+
 
 @app.route('/wallet', methods=['GET'])
 def wallet():
     param = {}
     return render_template('wallet.html', **param)
+
+
+@app.route('/button_clicked', methods=['POST'])
+def button_clicked():
+    param = {}
+    button_id = request.form['button_id']
+    param['button_id'] = str(button_id)
+    return render_template("ryletka.html", **param)
 
 
 if __name__ == '__main__':

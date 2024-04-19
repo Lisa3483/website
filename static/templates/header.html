@@ -1,52 +1,71 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet"
-          href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-          crossorigin="anonymous">
-    <link rel="stylesheet" href="static/css1/style.css1">
-    <title>Title</title>
-</head>
-<body>
+<div >
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <a class="navbar-brand" href="#">Navbar</a>
+  <a class="navbar-brand" href="#">Кейсы</a>
 
   <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Главное меню <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="/">Главное меню <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Кейсы</a>
+        <a class="nav-link" href="/cases">Кейсы</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Профиль</a>
+        <a class="nav-link" href="/profil">Профиль</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Кошелек</a>
+          {%if flagau == 1%}
+        <a class="nav-link" href="/wallet">Баланс пользователя</a>
+          {%endif%}
+          {%if flagau == 0%}
+          <a id="openModalBtn" class="nav-link" >Баланс пользователя</a>
+          {%endif%}
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Контакты</a>
-      </li>
+
+
     </ul>
     <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
-    <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <img src="pprofil.png">
+    <li class="nav-item dropdown dropleft">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" aria-haspopup="true" aria-expanded="false">
+          <img src="static/img/pprofil.png">
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">Регистрация</a>
-          <a class="dropdown-item" href="#">Авторизация</a>
+          <a class="dropdown-item" href="/registr" id="registr">Регистрация</a>
+          <a class="dropdown-item" href="/log_in" id="log_in">Авторизация</a>
         </div>
-      </li>
-    </ul>
-  </div>
+    </li>
+</ul>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Находим выпадающее меню
+        var dropdownMenu = document.querySelector('.dropdown');
+
+        // Активируем его с помощью Bootstrap метода
+        var dropdownInstance = new bootstrap.Dropdown(dropdownMenu);
+
+        // Находим кнопки в выпадающем меню
+        var registrButton = document.getElementById('registr');
+        var logInButton = document.getElementById('log_in');
+
+        // Добавляем обработчики событий для кликов на кнопках
+        registrButton.addEventListener('click', function(event) {
+            // Перенаправляем пользователя на страницу регистрации
+            window.location.href = '/registr';
+        });
+
+        logInButton.addEventListener('click', function(event) {
+            // Перенаправляем пользователя на страницу авторизации
+            window.location.href = '/log_in';
+        });
+    });
+</script>
+
+
+
+ </div>
 </nav>
-</body>
-</html>
+</div>
