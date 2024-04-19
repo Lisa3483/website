@@ -84,3 +84,18 @@ header {
   background-size: var(--s) calc(2*var(--s)/3);
 }
 
+.nebody {
+        margin-left:20%;
+         margin-right:20%;
+}
+
+.button {
+            padding: 20px 35px; /* Увеличение размера кнопок */
+            margin: 10px;
+            font-size: 18px; /* Увеличение размера шрифта */
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+}

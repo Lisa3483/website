@@ -7,7 +7,6 @@ import string
 from flask_mail import Mail, Message
 from DB.database import UserDatabase
 
-
 app = Flask(__name__, template_folder='static/templates')
 
 db = UserDatabase()
@@ -21,6 +20,7 @@ def index():
     global FLAG_IN
     param = {}
     param['flagau'] = FLAG_IN
+    param['num_buttons'] = 10
     print(FLAG_IN, NAME, ID)
 
     return render_template('main_menu.html', **param)
@@ -74,6 +74,8 @@ def logs():
     if db.check_log_in(email, password):
         name, id_ = db.check_log_in(email, password)
         NAME = name@app.route('/register', methods=['POST'])'''
+
+
 def register():
     username = request.form['username']
     email = request.form['email']
@@ -105,10 +107,19 @@ def log():
         print(FLAG_IN)
         return profil()
 
+
 @app.route('/wallet', methods=['GET'])
 def wallet():
     param = {}
     return render_template('wallet.html', **param)
+
+
+@app.route('/button_clicked', methods=['POST'])
+def button_clicked():
+    param = {}
+    button_id = request.form['button_id']
+    param['button_id'] = str(button_id)
+    return render_template("ryletka.html", **param)
 
 
 if __name__ == '__main__':
