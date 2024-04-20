@@ -14,6 +14,7 @@
 .wallpaper {
     background-size:cover;
     background: linear-gradient(to right, #c78bb5 0%, #d6b4c2 63%, #baa0ab 100%);
+
 }
 .profil-info{
     display:flex;
@@ -64,16 +65,15 @@
 }
 .nav-item a{
     margin:0;
-    font-size:32px;
+    font-size:20px;
     color:#3f888f;
 }
-.nav-item dropdown{
-    margin-right:20%;
-}
+
 footer{
      background-size:cover;
      background-color:white;
 }
+
 header, footer {padding: 100px 0}
 
 

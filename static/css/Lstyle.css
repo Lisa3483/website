@@ -79,6 +79,12 @@ header, footer {padding: 100px 0}
 body { background-size:cover;
     background: linear-gradient(to right, #c78bb5 0%, #d6b4c2 63%, #baa0ab 100%);
     }
+.nav-item a{
+    margin:0;
+    font-size:20px;
+    color:#3f888f;
+}
+
 h1 {text-align: center}
 a.itd_play  {
   display: flex;

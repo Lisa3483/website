@@ -54,6 +54,11 @@ form label > span {
 .cvv {
   width: 25%;
 }
+.nav-item a{
+    margin:0;
+    font-size:20px;
+    color:#3f888f;
+}
 label,
 input {
   width: 100%;

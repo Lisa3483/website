@@ -63,7 +63,7 @@ def register():
         return regist(flagpass=2)
     else:
         db.add_user(nickname=username, hashed_password=password, email=email)
-        return 'Пользователь успешно зарегестрирован'
+        return log_in()
 
 
 '''@app.route('/log', methods=['POST'])
@@ -91,7 +91,7 @@ def register():
         return regist(flagpass=2)
     else:
         db.add_user(nickname=username, hashed_password=password, email=email)
-        return 'Пользователь успешно зарегестрирован'
+        return log_in()
 
 
 @app.route('/log', methods=['POST'])
