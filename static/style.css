@@ -1,12 +1,13 @@
 #roulette {
-    width: 2000px; /* Установите желаемую ширину */
-    height: 1000px; /* Установите желаемую высоту */
+    width: 500px; /* Установите желаемую ширину */
+    height: 500px; /* Установите желаемую высоту */
     border: 1px solid black;
     overflow: hidden;
     position: relative; /* Добавляем для позиционирования изображений */
 }
 
 #roulette img {
+
     position: absolute; /* Позиционируем изображения абсолютно внутри контейнера */
     top: 0;
     left: 0;
