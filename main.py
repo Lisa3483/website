@@ -13,14 +13,15 @@ db = UserDatabase()
 NAME = ''
 ID = ''
 FLAG_IN = 0
-
+BALANCE = 0
 
 @app.route('/')
 def index():
     global FLAG_IN
     param = {}
     param['flagau'] = FLAG_IN
-    param['num_buttons'] = 10
+    param['num_buttons'] = 3
+
     print(FLAG_IN, NAME, ID)
 
     return render_template('main_menu.html', **param)
@@ -32,6 +33,7 @@ def profil():
     param['username'] = NAME
     param['flagau'] = FLAG_IN
     param['userid'] = ID
+    param['balance'] = BALANCE
     return render_template('profil.html', **param)
 
 
@@ -99,29 +101,50 @@ def log():
     global NAME
     global ID
     global FLAG_IN
+    global BALANCE
     email = request.form['email']
     password = request.form['password']
     if db.check_log_in(email, password):
+
         name, id_ = db.check_log_in(email, password)
         NAME = name
         ID = id_
         FLAG_IN = 1
+        BALANCE = db.get_balance(ID)
         print(FLAG_IN)
         return profil()
 
 
 @app.route('/wallet', methods=['GET'])
 def wallet():
+
     param = {}
     return render_template('wallet.html', **param)
 
 
 @app.route('/button_clicked', methods=['POST'])
 def button_clicked():
-    param = {}
-    button_id = request.form['button_id']
-    param['button_id'] = str(button_id)
-    return render_template("ryletka.html", **param)
+    if FLAG_IN == 1:
+        param = {}
+        button_id = request.form['button_id']
+        if db.change_balance(ID,int(button_id)*100):
+            param['button_id'] = str(button_id)
+            return render_template("ryletka.html", **param)
+        else:
+            return index()
+    else:
+        return index()
+
+@app.route('/wallet_click', methods=['POST'])
+def wallet_click():
+    global BALANCE
+    balans = request.form['balans']
+    db.change_user_balance(ID, balans)
+    BALANCE = db.get_balance(ID)
+    return index()
+
+
+
 
 
 if __name__ == '__main__':

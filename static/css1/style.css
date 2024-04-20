@@ -93,8 +93,9 @@ header {
 }
 
 .nebody {
-        margin-left:20%;
-         margin-right:20%;
+        margin-left:30%;
+         margin-right:30%;
+
 }
 
 .button {
@@ -106,4 +107,6 @@ header {
             color: white;
             border: none;
             border-radius: 4px;
+            margin-left:70px;
+
 }

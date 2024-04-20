@@ -83,8 +83,8 @@
 </nav>
 <div class="wallpaper">
 <div class="form_wal">
-<form>
-  <label><span class="nmoncd">Сумма пополнения</span><input name="nameoncard" type="text" placeholder="0"></label>
+ <form action="/wallet_click" method="post">
+  <label><span class="nmoncd">Сумма пополнения</span><input id="balans" name="balans" type="text" placeholder="0"></label>
   <label><span class="cdnum">Номер карты <span>(Тире не нужны)</span></span><input name="cardnumber" type="text" placeholder="XXXX-XXXX-XXXX-XXXX"></label>
   <label class="exp"><span class="expdt">Срок годности</span><input name="experationdate" type="text" placeholder="MM/YYYY"></label>
   <label class="cvv"><span class="cvvnum">CVV</span><input name="cvvnumber" type="text" placeholder="XXX"></label>

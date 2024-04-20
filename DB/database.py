@@ -5,6 +5,7 @@ import os
 from sqlalchemy import Column, Integer, String, DateTime, ForeignKey, Enum, Numeric, JSON
 from sqlalchemy.orm import relationship, declarative_base
 from sqlalchemy.sql import func
+
 Base = declarative_base()
 
 
@@ -49,3 +50,23 @@ class UserDatabase:
             return True
         else:
             return False
+
+    def change_user_balance(self, user_id, new_balance):
+        user = self.session.query(User).filter_by(id=user_id).first()
+        if user:
+            user.balance += int(new_balance)
+            self.session.commit()
+        else:
+            print("User not found.")
+
+    def change_balance(self, user_id, money):
+        user = self.session.query(User).filter_by(id=user_id).first()
+        if user.balance >= money:
+            user.balance -= money
+            self.session.commit()
+            return True
+        else:
+            return False
+    def get_balance(self,user_id):
+        user = self.session.query(User).filter_by(id=user_id).first()
+        return user.balance
