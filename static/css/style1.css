@@ -10,7 +10,7 @@
   font-size: 1.5em;
   font-family: Raleway, Helvetica, sans-serif;
   font-weight: 100;
-  background: linear-gradient(to right, #fcf885 0%,#a5c956 46%,#5d8e12 100%);
+  background: linear-gradient(0deg, #fda9c0 0%, #bd98d6 100%);
 }
 .nav-item a{
     margin:0;
@@ -31,10 +31,12 @@ input {
 label span {
   font-size: 0.75em;
 }
-div {display: flex;
-justify-content: center;
-  align-items: center;}
 
+.form_wal {
+display: flex;
+justify-content: center;
+  align-items: center;
+padding: 100px 0;}
 form {
 
   width: 100%;
