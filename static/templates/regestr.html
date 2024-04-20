@@ -10,11 +10,11 @@
 </head>
 <body>
 <div class="container mt-5">
-    <h1>Регистрация</h1>
+    <h1 style="color:white">Регистрация</h1>
     <form action="/register" method="post">
         {% if flagpass == 2 %}
         <div class="mb-3">
-            <label for="username" class="form-label">Имя пользователя <span style="color: red; font-weight: bold;">* Имя пользователя или почта заняты</span></label>
+            <label for="username" class="form-label"> Имя пользователя <span style="color: red; font-weight: bold;">* Имя пользователя или почта заняты</span></label>
             <input type="text" class="form-control" id="username" name="username" required>
         </div>
         <div class="mb-3">
@@ -50,7 +50,7 @@
             <label for="confirm_password" class="form-label">Повторите пароль</label>
             <input type="password" class="form-control" id="confirm_password" name="confirm_password" required>
         </div>
-        {%endif%}
+        {% endif %}
         <button type="submit" class="btn btn-primary" onclick="myFunction()">Зарегистрироваться</button>
 
     </form>

@@ -30,12 +30,14 @@ def index():
 def profil():
     param = {}
     param['username'] = NAME
+    param['flagau'] = FLAG_IN
     param['userid'] = ID
     return render_template('profil.html', **param)
 
 
 @app.route('/log_in', methods=['GET'])
 def log_in():
+    print(FLAG_IN)
     param = {}
     return render_template('log_in.html', **param)
 
@@ -61,7 +63,7 @@ def register():
         return regist(flagpass=2)
     else:
         db.add_user(nickname=username, hashed_password=password, email=email)
-        return 'Пользователь успешно зарегестрирован'
+        return log_in()
 
 
 '''@app.route('/log', methods=['POST'])
@@ -89,7 +91,7 @@ def register():
         return regist(flagpass=2)
     else:
         db.add_user(nickname=username, hashed_password=password, email=email)
-        return 'Пользователь успешно зарегестрирован'
+        return log_in()
 
 
 @app.route('/log', methods=['POST'])

@@ -76,11 +76,15 @@ footer{
      background-color:white;
 }
 header, footer {padding: 100px 0}
-body {
-   background: linear-gradient(to right, #c9de96 0%,#8ab66b 44%,#398235 100%);
+body { background-size:cover;
+    background: linear-gradient(to right, #c78bb5 0%, #d6b4c2 63%, #baa0ab 100%);
+    }
+.nav-item a{
+    margin:0;
+    font-size:20px;
+    color:#3f888f;
 }
-body { background: linear-gradient(to right, #fcf885 0%,#a5c956 58%,#a5c956 100%); }
-body { background: linear-gradient(to right, #fcf885 0%,#a5c956 46%,#5d8e12 100%);}
+
 h1 {text-align: center}
 a.itd_play  {
   display: flex;
@@ -99,6 +103,7 @@ a.itd_play  {
   align-items: center;
   margin: 30px auto 30px;
 }
+
 .rere {
 background-color: #398235;
 width: 60px;

@@ -1,9 +1,16 @@
-<div >
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кейс 1</title>
+</head>
+<body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <a class="navbar-brand" href="#">Кейсы</a>
+  <a class="navbar-brand" href="/cases">Кейсы</a>
 
   <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
@@ -38,34 +45,8 @@
         </div>
     </li>
 </ul>
-
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        // Находим выпадающее меню
-        var dropdownMenu = document.querySelector('.dropdown');
-
-        // Активируем его с помощью Bootstrap метода
-        var dropdownInstance = new bootstrap.Dropdown(dropdownMenu);
-
-        // Находим кнопки в выпадающем меню
-        var registrButton = document.getElementById('registr');
-        var logInButton = document.getElementById('log_in');
-
-        // Добавляем обработчики событий для кликов на кнопках
-        registrButton.addEventListener('click', function(event) {
-            // Перенаправляем пользователя на страницу регистрации
-            window.location.href = '/registr';
-        });
-
-        logInButton.addEventListener('click', function(event) {
-            // Перенаправляем пользователя на страницу авторизации
-            window.location.href = '/log_in';
-        });
-    });
-</script>
-
-
-
- </div>
-</nav>
-</div>
+    <h1>Кейс 1</h1>
+    <p>Это содержимое кейса 1.</p>
+    <button onclick="window.location.href='/'">Вернуться на главную</button>
+</body>
+</html>
